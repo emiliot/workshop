@@ -5,5 +5,15 @@
   "main": "index.js",
   "repository": "git@github.com:emiliot/workshop.git",
   "author": "Emilio Tirado",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "beta"
+  },
+  "scripts": {
+    "start": "webpack --config webpack.config.js",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
 }
