@@ -1,0 +1,9 @@
+{
+  "name": "workshop",
+  "version": "0.0.1",
+  "description": "Workshop for modern web architecture",
+  "main": "index.js",
+  "repository": "git@github.com:emiliot/workshop.git",
+  "author": "Emilio Tirado",
+  "license": "MIT"
+}
