@@ -47,20 +47,33 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
-                use: [
-                    'babel-loader',
-                ],
-                exclude: /node_modules/
+                include: [resolve(__dirname,'./src') ],
+                loader: 'babel-loader'
+            },
+            {
+                test: /\.(css|scss)$/,
+                include: [resolve(__dirname,'./src')],
+                loader: 'style-loader!css-loader?sourceMap!sass-loader?sourceMap'
             },
             {
                 test: /\.css$/,
-                use: [
-                    'style-loader',
-                    'css-loader?modules',
-                    'postcss-loader',
-                ],
+                include: [resolve(__dirname,'./node_modules/normalize.css')],
+                loader: 'style-loader!css-loader'
             },
-        ],
+            {
+                test: /\.(png|jpg|wav|mp3)$/,
+                include: [resolve(__dirname, './assets')],
+                loader: 'url-loader?limit=4096'
+            },
+            {
+                test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                loader: 'url-loader?limit=4096&mimetype=application/font-woff'
+            },
+            {
+                test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                loader: 'file-loader'
+            }
+        ]
     },
 
     plugins: [
