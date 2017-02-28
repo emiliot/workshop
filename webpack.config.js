@@ -1,5 +1,6 @@
 const { resolve } = require('path');
 const webpack = require('webpack');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: [
@@ -51,14 +52,11 @@ module.exports = {
                 loader: 'babel-loader'
             },
             {
-                test: /\.(css|scss)$/,
+                test: /\.(css)$/,
                 include: [resolve(__dirname,'./src')],
-                loader: 'style-loader!css-loader?sourceMap!sass-loader?sourceMap'
-            },
-            {
-                test: /\.css$/,
-                include: [resolve(__dirname,'./node_modules/normalize.css')],
-                loader: 'style-loader!css-loader'
+                use: ExtractTextPlugin.extract({
+                    use: 'css-loader'
+                })
             },
             {
                 test: /\.(png|jpg|wav|mp3)$/,
@@ -81,7 +79,9 @@ module.exports = {
         // enable HMR globally
 
         new webpack.NamedModulesPlugin(),
-        // prints more readable module names in the browser console on HMR updates
+        // prints more readable module names in the browser console on HMR updates,
+
+        new ExtractTextPlugin('styles.css')
     ],
 
     resolve: {

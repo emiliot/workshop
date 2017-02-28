@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 // AppContainer is a necessary wrapper component for HMR
 
-import App from './components/App';
+import app from './components/app';
 
 const render = (Component) => {
     ReactDOM.render(
@@ -15,11 +15,11 @@ const render = (Component) => {
     );
 };
 
-render(App);
+render(app);
 
 // Hot Module Replacement API
 if (module.hot) {
-    module.hot.accept('./components/App', () => {
-        render(App)
+    module.hot.accept('./components/app', () => {
+        render(app)
     });
 }
