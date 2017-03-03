@@ -18,6 +18,9 @@ The main goal of this workshop is to create a base project for modern web applic
 
 ## Todo
 * Add test framework
+* Add linting to js|jsx files
+* Add linting to styles
+* Add editorconfig
 * Add sass support
 * Add css modules support
 * Add routing
