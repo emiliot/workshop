@@ -15,6 +15,14 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin()
     ],
+    resolve: {
+        extensions: ['', '.js', '.jsx']
+    },
+    externals: {
+        'cheerio': 'window',
+        'react/lib/ExecutionEnvironment': true,
+        'react/lib/ReactContext': true
+    },
     module: {
         loaders: [{
             test: /\.js$/,
