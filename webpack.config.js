@@ -54,9 +54,7 @@ module.exports = {
             {
                 test: /\.(css)$/,
                 include: [resolve(__dirname,'./src')],
-                use: ExtractTextPlugin.extract({
-                    use: 'css-loader'
-                })
+                loader: ['style-loader', 'css-loader']
             },
             {
                 test: /\.(png|jpg|wav|mp3)$/,
@@ -80,8 +78,6 @@ module.exports = {
 
         new webpack.NamedModulesPlugin(),
         // prints more readable module names in the browser console on HMR updates,
-
-        new ExtractTextPlugin('styles.css')
     ],
 
     resolve: {

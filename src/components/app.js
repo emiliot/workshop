@@ -1,6 +1,7 @@
 import React from 'react';
-import styles from './styles.css';
+const styles = require('./styles.css')
 
+console.log(styles)
 const App = () => (
     <div className={styles.app}>
         <h2>Hello, emilio</h2>
