@@ -10,6 +10,8 @@ The main goal of this workshop is to create a base project for modern web applic
 * [Webpack](https://webpack.js.org/) as a module bundler
 * [React](https://facebook.github.io/react/) as the web library
 * [Javascript ES6](http://es6-features.org/) as the programming language
+* [Mocha](https://mochajs.org/) as test runner
+* [Enzyme](https://github.com/airbnb/enzyme) as the test suite
 
 ## Setup instructions
 
@@ -17,7 +19,6 @@ The main goal of this workshop is to create a base project for modern web applic
 2. `yarn start` This will fire up webpack and a little server on port 3000
 
 ## Todo
-* Add test framework
 * Add linting to js|jsx files
 * Add linting to styles
 * Add editorconfig
