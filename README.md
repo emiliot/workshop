@@ -18,11 +18,11 @@ The main goal of this workshop is to create a base project for modern web applic
 
 ## Todo
 * Add minification script
+* Add test framework
 * Add sass support
 * Add css modules support
 * Add routing
 * Upgrade to react hot modules 3
-* Add test framework
 
 ## Known Issues
 
