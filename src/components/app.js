@@ -1,11 +1,14 @@
-import React from 'react';
-const styles = require('./styles.css')
+import React, {Component} from 'react';
+import styles from './styles.css';
 
-console.log(styles)
-const App = () => (
-    <div className={styles.app}>
-        <h2>Hello, emilio</h2>
-    </div>
-);
+class App extends Component {
+    render () {
+        return (
+            <div className="app-blue">
+                <h1>Hello, emilio</h1>
+            </div>
+        )
+    }
+}
 
 export default App;
