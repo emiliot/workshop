@@ -7,7 +7,8 @@
   "author": "Emilio Tirado <emilio.tirado57@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "webpack"
   },
   "devDependencies": {
     "babel-core": "^6.0.20",

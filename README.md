@@ -17,7 +17,6 @@ The main goal of this workshop is to create a base project for modern web applic
 2. `yarn start` This will fire up webpack and a little server on port 3000
 
 ## Todo
-* Add minification script
 * Add test framework
 * Add sass support
 * Add css modules support
