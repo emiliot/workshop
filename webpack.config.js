@@ -24,13 +24,13 @@ module.exports = {
         'react/lib/ReactContext': true
     },
     module: {
-        loaders: [{
+        rules: [{
             test: /\.(js|jsx)$/,
-            loaders: ['react-hot-loader', 'babel-loader'],
+            use: ['react-hot-loader', 'babel-loader'],
             include: path.join(__dirname, 'src')
         }, {
             test: /\.css$/,
-            loaders: ['style-loader', 'css-loader'],
+            use: ['style-loader', 'css-loader'],
             include: path.join(__dirname, 'src')
         }]
     }
