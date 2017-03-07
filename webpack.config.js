@@ -16,7 +16,7 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin()
     ],
     resolve: {
-        extensions: ['', '.js', '.jsx']
+        extensions: ['.js', '.jsx']
     },
     externals: {
         'cheerio': 'window',
@@ -26,7 +26,7 @@ module.exports = {
     module: {
         loaders: [{
             test: /\.(js|jsx)$/,
-            loaders: ['react-hot', 'babel'],
+            loaders: ['react-hot-loader', 'babel-loader'],
             include: path.join(__dirname, 'src')
         }, {
             test: /\.css$/,
