@@ -16,7 +16,7 @@ The main goal of this workshop is to create a base project for modern web applic
 ## Setup instructions
 
 1. `yarn install` This will install all the dependencies from **yarn.lock** file.
-2. `yarn start` This will fire up webpack and a little server on port 3000
+2. `yarn start` This will fire up webpack and a little server on port 8080 using **webpack-dev-server**
 
 ## Todo
 * Add linting to (js | jsx) files
@@ -25,8 +25,6 @@ The main goal of this workshop is to create a base project for modern web applic
 * Add sass support
 * Add css modules support
 * Add routing
-* Upgrade to react hot modules 3
 
 ## Known Issues
 
-* Flaky hot reloading on stateless components. (May require to have a stateful component in the chain to work)

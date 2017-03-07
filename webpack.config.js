@@ -4,17 +4,26 @@ var webpack = require('webpack');
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
     entry: [
-        'webpack-hot-middleware/client',
+        'babel-polyfill',
+        'react-hot-loader/patch',
+        'webpack-dev-server/client?http://localhost:8080',
+        'webpack/hot/only-dev-server',
         './src/index'
     ],
-    output: {
-        path: path.join(__dirname, 'dist'),
-        filename: 'bundle.js',
-        publicPath: '/static/'
-    },
     plugins: [
         new webpack.HotModuleReplacementPlugin()
     ],
+    devtool: 'inline-source-map',
+    devServer: {
+        hot: true,
+        contentBase: path.resolve(__dirname, 'dist'),
+        publicPath: '/static/'
+    },
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js',
+        publicPath: '/static/'
+    },
     resolve: {
         extensions: ['.js', '.jsx']
     },
@@ -26,7 +35,7 @@ module.exports = {
     module: {
         rules: [{
             test: /\.(js|jsx)$/,
-            use: ['react-hot-loader', 'babel-loader'],
+            loader: 'babel-loader',
             include: path.join(__dirname, 'src')
         }, {
             test: /\.css$/,
