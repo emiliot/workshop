@@ -4,19 +4,28 @@ var webpack = require('webpack');
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
     entry: [
-        'webpack-hot-middleware/client',
+        'babel-polyfill',
+        'react-hot-loader/patch',
+        'webpack-dev-server/client?http://localhost:8080',
+        'webpack/hot/only-dev-server',
         './src/index'
     ],
-    output: {
-        path: path.join(__dirname, 'dist'),
-        filename: 'bundle.js',
-        publicPath: '/static/'
-    },
     plugins: [
         new webpack.HotModuleReplacementPlugin()
     ],
+    devtool: 'inline-source-map',
+    devServer: {
+        hot: true,
+        contentBase: path.resolve(__dirname, 'dist'),
+        publicPath: '/static/'
+    },
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js',
+        publicPath: '/static/'
+    },
     resolve: {
-        extensions: ['', '.js', '.jsx']
+        extensions: ['.js', '.jsx']
     },
     externals: {
         'cheerio': 'window',
@@ -24,14 +33,14 @@ module.exports = {
         'react/lib/ReactContext': true
     },
     module: {
-        loaders: [{
+        rules: [{
             test: /\.(js|jsx)$/,
-            loaders: ['react-hot', 'babel'],
-            include: path.join(__dirname, 'src')
+            loader: 'babel-loader',
+            include: [path.join(__dirname, 'src')]
         }, {
             test: /\.css$/,
-            loaders: ['style-loader', 'css-loader'],
-            include: path.join(__dirname, 'src')
+            use: ['style-loader', 'css-loader'],
+            include: [path.join(__dirname, 'src')]
         }]
     }
 };
