@@ -1,0 +1,5 @@
+--compilers js:babel-register
+--require test/helpers/browser.js
+--colors
+--reporter spec
+--require ignore-styles
