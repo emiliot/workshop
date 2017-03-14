@@ -9,7 +9,9 @@
   "scripts": {
     "start": "webpack-dev-server --open",
     "build": "webpack",
-    "test": "mocha --opts test/mocha.opts test/**/*.spec.js"
+    "test": "mocha --opts test/mocha.opts test/**/*.spec.js",
+    "lint": "eslint src/**/*.js src/**/*.jsx",
+    "lint:styles": "stylelint src/**/*.css"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
@@ -24,8 +26,9 @@
     "chai": "^3.5.0",
     "css-loader": "^0.26.2",
     "enzyme": "^2.7.1",
-    "eslint": "^1.10.3",
-    "eslint-plugin-react": "^3.6.2",
+    "eslint": "^3.17.1",
+    "eslint-loader": "^1.6.3",
+    "eslint-plugin-react": "^6.10.0",
     "express": "^4.13.4",
     "ignore-styles": "^5.0.1",
     "jsdom": "^9.11.0",
@@ -33,6 +36,8 @@
     "react-addons-test-utils": "^15.4.2",
     "react-hot-loader": "next",
     "style-loader": "^0.13.2",
+    "stylelint": "^7.9.0",
+    "stylelint-config-standard": "^16.0.0",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1"
   },
