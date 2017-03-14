@@ -1,9 +1,9 @@
 import React from 'react';
 import TestComponent from './testCompnent';
-import styles from './styles.css';
+import Styles from './styles.css';
 
 const App = () => (
-    <div className='app'>
+    <div className={Styles.app}>
         <h1>Hello, emilio</h1>
         <TestComponent hello='world'/>
     </div>

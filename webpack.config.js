@@ -2,7 +2,6 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-    devtool: 'cheap-module-eval-source-map',
     entry: [
         'babel-polyfill',
         'react-hot-loader/patch',
@@ -35,11 +34,21 @@ module.exports = {
     module: {
         rules: [{
             test: /\.(js|jsx)$/,
-            loader: 'babel-loader',
+            use: [{
+                loader: 'babel-loader'
+            }],
             include: [path.join(__dirname, 'src')]
         }, {
             test: /\.css$/,
-            use: ['style-loader', 'css-loader'],
+            use: [
+                { loader: 'style-loader'},
+                {
+                    loader: 'css-loader',
+                    options: {
+                        modules: true
+                    }
+                }
+            ],
             include: [path.join(__dirname, 'src')]
         }]
     }
