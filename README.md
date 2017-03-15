@@ -19,7 +19,6 @@ The main goal of this workshop is to create a base project for modern web applic
 2. `yarn start` This will fire up webpack and a little server on port 8080 using **webpack-dev-server**
 
 ## Todo
-* Add sass support
 * Add routing
 
 ## Known Issues
