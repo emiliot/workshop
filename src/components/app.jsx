@@ -1,6 +1,6 @@
 import React from 'react';
-import TestComponent from './testCompnent';
-import Styles from './styles.css';
+import TestComponent from './testComponent';
+import Styles from './styles.scss';
 
 const App = () => (
   <div className={Styles.app}>
