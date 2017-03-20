@@ -7,7 +7,7 @@ const TestComponent = ({hello}) => {
 }
 
 TestComponent.propTypes = {
-  hello: PropTypes.string.required
+  hello: PropTypes.string.isRequired
 }
 
 export default TestComponent

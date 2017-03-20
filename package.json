@@ -9,9 +9,10 @@
   "scripts": {
     "start": "webpack-dev-server --open",
     "build": "webpack",
-    "test": "mocha --opts test/mocha.opts test/**/*.spec.js",
+    "test": "yarn lint && yarn lint:styles && yarn test:unit",
+    "test:unit": "mocha --opts test/mocha.opts test/**/*.spec.js",
     "lint": "eslint src/**/*.js src/**/*.jsx",
-    "lint:styles": "stylelint src/**/*.css"
+    "lint:styles": "stylelint src/**/*.css --allow-empty-input && stylelint src/**/*.scss --allow-empty-input"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
@@ -24,6 +25,7 @@
     "babel-preset-stage-0": "^6.22.0",
     "babel-register": "^6.23.0",
     "chai": "^3.5.0",
+    "classnames": "^2.2.5",
     "css-loader": "^0.26.2",
     "enzyme": "^2.7.1",
     "eslint": "^3.17.1",
@@ -33,11 +35,15 @@
     "ignore-styles": "^5.0.1",
     "jsdom": "^9.11.0",
     "mocha": "^3.2.0",
+    "node-sass": "^4.5.0",
     "react-addons-test-utils": "^15.4.2",
     "react-hot-loader": "next",
+    "sass-loader": "^6.0.3",
     "style-loader": "^0.13.2",
     "stylelint": "^7.9.0",
+    "stylelint-config-sass-guidelines": "^2.0.0",
     "stylelint-config-standard": "^16.0.0",
+    "stylelint-scss": "^1.4.3",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1"
   },
