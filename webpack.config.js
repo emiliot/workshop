@@ -16,7 +16,8 @@ module.exports = {
   devServer: {
     hot: true,
     contentBase: path.resolve(__dirname, 'dist'),
-    publicPath: '/static/'
+    publicPath: '/static/',
+    historyApiFallback: true
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
