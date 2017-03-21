@@ -1,12 +1,12 @@
 import React from 'react';
-import {mount} from 'enzyme';
+import {render} from 'enzyme';
 import {expect} from 'chai';
 import Home from '../../src/components/Home';
-import {BrowserRouter as Router} from 'react-router-dom';
+import {MemoryRouter as Router} from 'react-router-dom';
 
 describe('<Home /> base test', function () {
   it('should render base component', function () {
-    const wrapper = mount(
+    const wrapper = render(
       <Router>
         <Home />
       </Router>);
